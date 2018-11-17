@@ -1,0 +1,25 @@
+<html>
+	<head>
+		<link rel="manifest" href="/manifest.json">
+		<link rel="apple-touch-icon" sizes="180x180" href="/assets/pwa/iconsV1/apple-touch-icon-180x180.png">
+		<meta content="width=device-width, initial-scale=1" name="viewport" />
+
+	</head>
+	<body>
+		<div class="container">
+			<div class="buttonContainer">
+				<button class="button" (click)="onRefreshTemperature()">REFRESH TEMPERATURE</button> 
+			</div>
+			<div class="buttonContainer">
+				<button class="button" [ngClass]="{disabled: pumpIsStarted}" (click)="onStartPump()">START PUMP</button>
+			</div>
+			<div class="buttonContainer">
+				<button class="button" [ngClass]="{disabled: !pumpIsStarted}" (click)="onStopPump()">STOP PUMP</button>
+			</div>
+			<br>
+			<div  class="buttonContainer">
+				<div class="status">{{pumpText}}, TEMPERATURE {{temperature}}</div>
+			</div>
+		</div>	
+	</body>
+</html>
